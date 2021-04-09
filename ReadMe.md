@@ -1,8 +1,9 @@
 ## Spring Boot dev
 
-
-+ 초기 추가 패키지  
++ 라이브러리 구성  
   spring web  
-  lombok
+  lombok  
+  jpa  
+  h2  
   
 
