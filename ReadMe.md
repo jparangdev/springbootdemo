@@ -4,6 +4,6 @@
   spring web  
   lombok  
   jpa  
-  h2  
+  h2  -- 테스트용 
   
 

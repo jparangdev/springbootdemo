@@ -21,4 +21,6 @@ class UserServiceTest {
         userRepository.save(user);
         userRepository.findAll().forEach(System.out::println);
     }
+
+
 }
