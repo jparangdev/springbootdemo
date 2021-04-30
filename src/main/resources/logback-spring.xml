@@ -2,6 +2,6 @@
 <configuration scan="true" scanPeriod="30 seconds">
     <springProperty name="LOG_PATH" source ="logging.path" />
     <timestamp key="dailyLog" dataPattern="yyyy-mm-dd"/>
-
+        // 로그 조사해
 
 </configuration>
