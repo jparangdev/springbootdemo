@@ -13,8 +13,9 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
 
-
-
+logging:
+  level:
+    root: trace
 
 server:
   port: 9900
