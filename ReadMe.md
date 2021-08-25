@@ -5,5 +5,6 @@
   lombok  
   jpa  
   h2  -- 테스트용 
+TDD 연습하기
   
 
