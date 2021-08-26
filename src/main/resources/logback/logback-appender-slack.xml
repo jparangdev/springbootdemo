@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configuration file for LogBack (slf4J implementation) See here for more 
+	details: http://gordondickens.com/wordpress/2013/03/27/sawing-through-the-java-loggers/ -->
+<included>
+	<appender name="SLACK" class="com.github.maricn.logback.SlackAppender">
+		<webhookUri>https://hooks.slack.com/services/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</webhookUri>
+		<channel>#juvis-batch</channel>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{HH:mm:ss.SSS} - %msg%n</pattern>
+		</layout>
+		<username>JuvisBatch[Dev]</username><!--보여지는 이름-->
+		<iconEmoji>:dizzy_face:</iconEmoji> <!--이모지 설정-->
+	</appender>
+
+	<appender name="ASYNC_SLACK" class="ch.qos.logback.classic.AsyncAppender">
+		<appender-ref ref="SLACK"/>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+	</appender>
+</included>
