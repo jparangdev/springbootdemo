@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration scan="true" scanPeriod="30 seconds" debug="false">
+
+<!--    <include resource="org/springframework/boot/logging/logback/base.xml"/>-->
     <include resource="logback/logback-appender-console.xml" />
+
+    <logger name="kr.co.jparangdev.springbootdemo" level="INFO"/>
 
     <root level="INFO">
         <appender-ref ref="console" />

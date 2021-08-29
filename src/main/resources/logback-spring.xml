@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
     <springProperty name="LOG_PATH" source ="logging.path" />
-    <timestamp key="dailyLog" dataPattern="yyyy-mm-dd"/>
+<!--    <timestamp key="dailyLog" dataPattern="yyyy-mm-dd"/>-->
         // 로그 조사해
 
     <include resource="logback/logback-appender-console.xml" />
     <include resource="logback/logback-appender-file.xml" />
+
+    <logger name="kr.co.jparangdev.springbootdemo" level="INFO"/>
 
     <root level="INFO">
         <appender-ref ref="console" />
