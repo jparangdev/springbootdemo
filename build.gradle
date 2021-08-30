@@ -30,8 +30,12 @@ dependencies {
 
     //2020-05-17 slack 알람 추가
     implementation 'com.github.maricn:logback-slack-appender:1.4.0'
-}
 
+    //2021-08-30 security 추가가
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security:spring-security-test'
+
+}
 test {
     useJUnitPlatform()
 }
