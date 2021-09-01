@@ -22,12 +22,12 @@ class UserServiceTest {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    UserService userService;
+//    @Autowired
+//    UserService userService;
 
     @Test
     void saveTest() {
-        User user = new User("jparangdev","jpd@email.com","JB099");
+        User user = new User("jparangdev","jpd@email.com","1234","JB099");
         userRepository.save(user);
         userRepository.findAll().forEach(System.out::println);
         long result = userRepository.count();
@@ -43,8 +43,8 @@ class UserServiceTest {
     @Test
     @DisplayName("이름검색 테스트")
     void searchListByName() {
-        List<User> list = userService.searchByName("이");
-        assertEquals(5,list.size());
+        List<User> list = userRepository.findByNameContaining("이");
+        assertEquals(2,list.size());
     }
 
 
