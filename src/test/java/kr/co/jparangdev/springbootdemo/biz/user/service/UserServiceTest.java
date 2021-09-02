@@ -7,6 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
@@ -44,7 +48,17 @@ class UserServiceTest {
     @DisplayName("이름검색 테스트")
     void searchListByName() {
         List<User> list = userRepository.findByNameContaining("이");
+        list.forEach(System.out::println);
         assertEquals(2,list.size());
+    }
+
+    @Test
+    @DisplayName("페이징 테스트")
+    void pagingTest() {
+        Pageable pageable = PageRequest.of(1,5, Sort.by(Sort.Direction.DESC, "email"));
+        Page<User> list = userRepository.findAll(pageable);
+        list.forEach(System.out::println);
+        assertEquals(5l,list.getTotalElements());
     }
 
 
