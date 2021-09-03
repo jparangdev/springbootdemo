@@ -26,9 +26,6 @@ class UserServiceTest {
     @Autowired
     UserRepository userRepository;
 
-//    @Autowired
-//    UserService userService;
-
     @Test
     void saveTest() {
         User user = new User("jparangdev","jpd@email.com","1234","JB099");
@@ -60,6 +57,8 @@ class UserServiceTest {
         list.forEach(System.out::println);
         assertEquals(5l,list.getTotalElements());
     }
+
+
 
 
 }

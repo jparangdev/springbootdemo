@@ -1,12 +1,12 @@
 package kr.co.jparangdev.springbootdemo.biz.user.vo;
 
+import kr.co.jparangdev.springbootdemo.biz.book.vo.Book;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Data
@@ -21,6 +21,9 @@ public class User {
     private String email;
     private String password;
     private String job;
+
+    @OneToMany
+    private List<Book> bookList = new ArrayList<Book>();
 
     @Builder
     public User(String name, String email, String password, String job) {

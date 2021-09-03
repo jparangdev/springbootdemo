@@ -1,14 +1,12 @@
 package kr.co.jparangdev.springbootdemo.biz.book.vo;
 
+import kr.co.jparangdev.springbootdemo.biz.user.vo.User;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Data
@@ -23,6 +21,10 @@ public class Book {
     private String name;
     private long publisher_seq;
     private int price;
+
+    @ManyToOne(optional = false)
+    @JoinTable(name="USER_BOOK",joinColumns = @JoinColumn(name = "seq"),inverseJoinColumns = @JoinColumn(name="seq"))
+    private User user;
 
     @Builder
     public Book(String name, long publisher_seq, int price) {
