@@ -22,9 +22,9 @@ public class Book {
     private long publisher_seq;
     private int price;
 
-    @ManyToOne(optional = false)
-    @JoinTable(name="USER_BOOK",joinColumns = @JoinColumn(name = "seq"),inverseJoinColumns = @JoinColumn(name="seq"))
-    private User user;
+//    @ManyToOne(optional = false)
+//    @JoinTable(name="USER_BOOK",joinColumns = @JoinColumn(name = "seq"),inverseJoinColumns = @JoinColumn(name="seq"))
+//    private User user;
 
     @Builder
     public Book(String name, long publisher_seq, int price) {
