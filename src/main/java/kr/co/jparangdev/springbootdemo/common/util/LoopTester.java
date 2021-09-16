@@ -6,6 +6,8 @@ import java.util.concurrent.ForkJoinPool;
 
 public class LoopTester {
 
+    ForkJoinPool pool = new ForkJoinPool(6);
+
     public long forLoopSumMinus(List<Integer> list) {
         long result = 0;
         for(int i = 0; i<list.size(); i++) {
@@ -31,7 +33,6 @@ public class LoopTester {
     }
 
     public long parallelStreamSumMinusWithPool(List<Integer> list) throws ExecutionException, InterruptedException {
-        ForkJoinPool pool = new ForkJoinPool(4);
         return pool.submit(() -> list.parallelStream().mapToInt(this::findEvenInteger).sum()).get();
     }
 
