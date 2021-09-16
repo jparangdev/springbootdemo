@@ -8,9 +8,12 @@ import java.util.Random;
 public class RandomMaker {
 
     Random random;
+    public RandomMaker() {
+        this.random = new Random();
+    }
 
     public RandomMaker(Random random) {
-        this.random = new Random();
+        this.random = random;
     }
 
     public int getRandomInt(int start, int end) {
