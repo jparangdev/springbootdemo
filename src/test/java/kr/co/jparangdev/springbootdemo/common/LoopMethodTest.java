@@ -12,6 +12,7 @@ import org.springframework.util.StopWatch;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class LoopMethodTest {
@@ -49,7 +50,7 @@ public class LoopMethodTest {
     @Test
     @Order(0)
     public void first() {
-        System.out.println(list.size());;
+        System.out.println(list.size());
     }
 
     @Test
@@ -77,8 +78,14 @@ public class LoopMethodTest {
     @Test
     @Order(4)
     public void parallelStreamSumMinus() {
-        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism","4");
         long result = loopTester.parallelStreamSumMinus(list);
+        System.out.println("parallelStreamSumMinus: "+result);
+    }
+
+    @Test
+    @Order(5)
+    public void parallelStreamSumMinusWithPool() throws ExecutionException, InterruptedException {
+        long result = loopTester.parallelStreamSumMinusWithPool(list);
         System.out.println("parallelStreamSumMinus: "+result);
     }
 
