@@ -1,16 +1,11 @@
 package kr.co.jparangdev.springbootdemo.common;
 
 
-import kr.co.jparangdev.springbootdemo.common.annotation.TimeCheck;
-import kr.co.jparangdev.springbootdemo.common.constants.TimeEnum;
 import kr.co.jparangdev.springbootdemo.common.util.LoopTester;
 import kr.co.jparangdev.springbootdemo.common.util.RandomMaker;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StopWatch;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -86,7 +81,7 @@ public class LoopMethodTest {
     @Order(5)
     public void parallelStreamSumMinusWithPool() throws ExecutionException, InterruptedException {
         long result = loopTester.parallelStreamSumMinusWithPool(list);
-        System.out.println("parallelStreamSumMinus: "+result);
+        System.out.println("parallelStreamSumMinusWithPool: "+result);
     }
 
 
