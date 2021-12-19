@@ -1,6 +1,5 @@
-package kr.co.jparangdev.springbootdemo.biz.book.vo;
+package kr.co.jparangdev.springbootdemo.biz.book.domain;
 
-import kr.co.jparangdev.springbootdemo.biz.user.vo.User;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +8,6 @@ import org.springframework.util.Assert;
 import javax.persistence.*;
 
 
-@Data
 @Entity
 @NoArgsConstructor
 public class Book {
@@ -22,9 +20,6 @@ public class Book {
     private long publisher_seq;
     private int price;
 
-//    @ManyToOne(optional = false)
-//    @JoinTable(name="USER_BOOK",joinColumns = @JoinColumn(name = "seq"),inverseJoinColumns = @JoinColumn(name="seq"))
-//    private User user;
 
     @Builder
     public Book(String name, long publisher_seq, int price) {
