@@ -10,6 +10,8 @@ import lombok.Data;
 @Data
 public class MemberForm {
 
+	private long id;
+
 	@Email
 	private String email;
 

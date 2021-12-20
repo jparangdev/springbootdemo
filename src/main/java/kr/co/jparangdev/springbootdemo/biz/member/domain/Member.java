@@ -45,4 +45,17 @@ public class Member {
             .jobCode(JobCode.valueOf(memberForm.getJobCode()))
             .build();
     }
+
+    public void modifyMember(MemberForm memberForm) {
+        if(!name.equals(memberForm.getName())) {
+            name = memberForm.getName();
+        }
+        if(!email.equals(memberForm.getEmail())) {
+            email = memberForm.getEmail();
+        }
+        if(jobCode != JobCode.valueOf(memberForm.getJobCode())) {
+            jobCode = JobCode.valueOf(memberForm.getJobCode());
+        }
+    }
+
 }

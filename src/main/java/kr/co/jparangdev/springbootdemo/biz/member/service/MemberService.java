@@ -38,4 +38,11 @@ public class MemberService {
         return memberRepository.findById(id).orElseThrow(()->new IllegalArgumentException(ExceptionMessage.NO_MEMBER.getMessage()));
     }
 
+    @Transactional
+    public Long update(MemberForm memberForm) {
+        Member findMember = findById(memberForm.getId());
+        findMember.modifyMember(memberForm);
+        return findMember.getId();
+    }
+
 }
