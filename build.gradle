@@ -34,6 +34,9 @@ dependencies {
     //2021-09-07 mockito 추가
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
 
+    //2021-11-06 devtools 추가
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 }
 
 test {

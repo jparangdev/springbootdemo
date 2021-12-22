@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class CustomExceptionHandler{
-    @ExceptionHandler(value=CustomTypeException.class)
-    public ResponseEntity customTypeException(CustomTypeException e) {
-        System.out.println("CustomTest!!");
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);  }
+public class CustomExceptionHandler {
 
+  @ExceptionHandler(value = CustomTypeException.class)
+  public ResponseEntity customTypeException(CustomTypeException e) {
+    System.out.println("CustomTest!!");
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+  }
 }

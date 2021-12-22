@@ -8,7 +8,7 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
-    url: jdbc:h2:mem:jparangdev;
+    url: jdbc:h2:file:~/h2/springbootdemo;
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
