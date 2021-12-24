@@ -1,6 +1,5 @@
 package kr.co.jparangdev.springbootdemo.biz.member.dto;
 
-import kr.co.jparangdev.springbootdemo.biz.bookcart.domain.BookCart;
 import kr.co.jparangdev.springbootdemo.biz.member.domain.Member;
 import lombok.Getter;
 import lombok.Setter;

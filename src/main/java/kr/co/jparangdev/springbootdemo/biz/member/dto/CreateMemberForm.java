@@ -3,14 +3,10 @@ package kr.co.jparangdev.springbootdemo.biz.member.dto;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-import org.hibernate.validator.constraints.Length;
-
 import lombok.Data;
 
 @Data
-public class MemberForm {
-
-	private long id;
+public class CreateMemberForm {
 
 	@Email
 	private String email;
@@ -18,7 +14,7 @@ public class MemberForm {
 	@NotBlank
 	private String password;
 
-	@NotBlank
+	@NotBlank(message = "{message.test}")
 	private String name;
 
 	@NotBlank

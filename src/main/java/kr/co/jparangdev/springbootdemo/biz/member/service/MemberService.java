@@ -1,6 +1,7 @@
 package kr.co.jparangdev.springbootdemo.biz.member.service;
 
-import kr.co.jparangdev.springbootdemo.biz.member.dto.MemberForm;
+import kr.co.jparangdev.springbootdemo.biz.member.dto.CreateMemberForm;
+import kr.co.jparangdev.springbootdemo.biz.member.dto.UpdateMemberForm;
 import kr.co.jparangdev.springbootdemo.biz.member.repository.MemberRepository;
 import kr.co.jparangdev.springbootdemo.biz.member.domain.Member;
 import kr.co.jparangdev.springbootdemo.common.constants.ExceptionMessage;
@@ -20,7 +21,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public Long join(MemberForm memberForm) {
+    public Long join(CreateMemberForm memberForm) {
         validDuplication(memberForm.getEmail());
         Member member  = Member.from(memberForm);
         Member saveMember = memberRepository.save(member);
@@ -39,7 +40,7 @@ public class MemberService {
     }
 
     @Transactional
-    public Long update(MemberForm memberForm) {
+    public Long update(UpdateMemberForm memberForm) {
         Member findMember = findById(memberForm.getId());
         findMember.modifyMember(memberForm);
         return findMember.getId();

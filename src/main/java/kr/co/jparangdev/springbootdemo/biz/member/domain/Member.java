@@ -1,12 +1,21 @@
 package kr.co.jparangdev.springbootdemo.biz.member.domain;
 
-import kr.co.jparangdev.springbootdemo.biz.bookcart.domain.BookCart;
-import kr.co.jparangdev.springbootdemo.biz.member.dto.MemberForm;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import kr.co.jparangdev.springbootdemo.biz.cart.Cart;
+import kr.co.jparangdev.springbootdemo.biz.member.dto.CreateMemberForm;
+import kr.co.jparangdev.springbootdemo.biz.member.dto.UpdateMemberForm;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 
 @Getter
 @Entity
@@ -26,7 +35,7 @@ public class Member {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    BookCart bookCart;
+    Cart cart;
 
     @Builder
     public Member(String name, String email, String password,
@@ -37,7 +46,7 @@ public class Member {
         this.jobCode = jobCode;
     }
 
-    public static Member from(MemberForm memberForm) {
+    public static Member from(CreateMemberForm memberForm) {
         return Member.builder()
             .name(memberForm.getName())
             .email(memberForm.getEmail())
@@ -46,7 +55,7 @@ public class Member {
             .build();
     }
 
-    public void modifyMember(MemberForm memberForm) {
+    public void modifyMember(UpdateMemberForm memberForm) {
         if(!name.equals(memberForm.getName())) {
             name = memberForm.getName();
         }
