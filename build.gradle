@@ -38,8 +38,14 @@ dependencies {
     //2021-11-06 devtools 추가
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-}
+    //2021-12-27 queryDsl 설정 추가
+    implementation 'com.querydsl:querydsl-jpa'
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0' // 포멧팅
+    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
 
+}
 test {
     useJUnitPlatform()
 }
