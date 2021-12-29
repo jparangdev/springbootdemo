@@ -14,7 +14,8 @@ public class CreateMemberForm {
 	@NotBlank
 	private String password;
 
-	@NotBlank(message = "{message.test}")
+	@NotBlank
+	// @NotBlank(message = "{message.test}")
 	private String name;
 
 	@NotBlank

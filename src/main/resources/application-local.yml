@@ -13,9 +13,9 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
 
-  messages:
-    basename: messages, errors
-    encoding: utf-8
+#  messages:
+#    basename: messages
+#    encoding: utf-8
 
 server:
   port: 9900
