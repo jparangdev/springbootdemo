@@ -17,7 +17,7 @@ public class MessageSourceConfig {
 		ReloadableResourceBundleMessageSource source = new ReloadableResourceBundleMessageSource();
 		source.setBasename("classpath:/messages/errors");
 		source.setDefaultEncoding("UTF-8");
-		source.setCacheSeconds(0);
+		source.setCacheSeconds(3600);
 		return source;
 	}
 

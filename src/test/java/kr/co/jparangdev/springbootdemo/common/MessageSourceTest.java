@@ -22,13 +22,5 @@ public class MessageSourceTest {
 	}
 
 
-	@Test
-	void messageReloadTest() throws InterruptedException {
-		System.out.println(messageSource.getMessage("NotBlank.name",null,null));
-		Thread.sleep(20000);
-		System.out.println(messageSource.getMessage("NotBlank.name",null,null));
-		Thread.sleep(20000);
-		System.out.println(messageSource.getMessage("NotBlank.name",null,null));
 
-	}
 }
